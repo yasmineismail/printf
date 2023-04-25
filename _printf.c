@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include main.h
+#include "main.h"
 
 #define BUFFER_SIZE 1024
 
@@ -58,11 +58,10 @@ void print_percent(char *b, int *counter, int *i)
 int _printf(const char *format, ...)
 {
 	va_list args;
-
-	va_start(args, format);
-
 	char b[BUFFER_SIZE];
 	int counter = 0, i = 0;
+	
+	va_start(args, format);
 
 	while (*format != '\0')
 	{
